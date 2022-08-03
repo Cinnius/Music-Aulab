@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
+
+Route::get('/form', [SongController::class, 'form'])->name('form');
+Route::post('/form/submit', [SongController::class, 'postSong'])->name('postSong');
