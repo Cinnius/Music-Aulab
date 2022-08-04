@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
-Route::get('/form', [SongController::class, 'form'])->name('form');
-Route::post('/form/submit', [SongController::class, 'postSong'])->name('postSong');
+Route::get('/song', [SongController::class, 'form'])->name('form');
+Route::post('/song/submit', [SongController::class, 'postSong'])->name('postSong');
+Route::get('/song/{song}', [SongController::class, 'detailSong'])->name('detailSong');

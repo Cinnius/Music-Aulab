@@ -1,4 +1,7 @@
 <x-layout>
+    <x-slot name="title">
+        Inserisci la tua canzone
+    </x-slot>
     <div class="container">
         <h1>Inserisci la tua canzone!</h1>
 

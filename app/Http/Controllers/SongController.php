@@ -24,4 +24,8 @@ class SongController extends Controller
 
         return redirect(route('form'))->with('message', "Canzone aggiunta con successo, vuoi aggiungerne un'altra?");
     }
+
+    public function detailSong(Song $song) {
+        return view('songdetails', compact('song'));
+    }
 }
