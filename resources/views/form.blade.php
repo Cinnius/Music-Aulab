@@ -9,7 +9,7 @@
         @endif
 
 
-        <form method="POST" action="{{route('postSong')}}">
+        <form method="POST" action="{{route('postSong')}}" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label class="form-label">Titolo</label>
@@ -28,6 +28,12 @@
                 <input type="text" class="form-control" name="minutes">
             </div>
             
+            <div class="mb-3">
+                <label class="form-label">Scegli una copertina</label>
+                <input type="file" class="form-control" name="img">
+            </div>
+
+
             <button type="submit" class="btn btn-primary">Invia</button>
         </form>
 

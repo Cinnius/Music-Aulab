@@ -14,5 +14,6 @@ class Song extends Model
         "singer",
         "year",
         "minutes",
+        "img",
     ];
 }
