@@ -31,4 +31,15 @@ class SongRequest extends FormRequest
             'img' => 'sometimes|image',
         ];
     }
+
+    public function messages() {
+        return [
+            'title.required'=>"Inserisci un titolo.",
+            'singer.required'=>"Inserisci un cantante.",
+            'year.required'=>"Inserisci un anno.",
+            'year.max'=>"l'anno non esiste.",
+            'minutes.required'=>"Inserisci una durata.",
+            'img.image'=>"Il file dev'essere un'immagine, riprova.",
+        ];
+    }
 }
