@@ -19,12 +19,19 @@ class SongController extends Controller
     public function postSong(SongRequest $req) {
         // dd($req->all());
         $song = Song::create([
+            
             "title"=>$req->input('title'),
             "singer"=>$req->input('singer'),
             "year"=>$req->input('year'),
             "minutes"=>$req->input('minutes'),
-            "img"=>$req->file('img')->store('public/img'),
+            "username"=>$req->input('username'),
+          
         ]);
+
+        if($req->file('img')){
+            $song->img = $req->file('img')->store('public/img');
+            $song->save();
+        }
 
         return redirect(route('form'))->with('message', "Canzone aggiunta con successo, vuoi aggiungerne un'altra?");
     }

@@ -22,6 +22,10 @@
 
         <form method="POST" action="{{route('postSong')}}" enctype="multipart/form-data">
             @csrf
+            <div class="mb-3 d-none">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" value="{{Auth::user()->name}}">
+            </div>
             <div class="mb-3">
                 <label class="form-label">Titolo</label>
                 <input type="text" class="form-control" name="title" value="{{old("title")}}">

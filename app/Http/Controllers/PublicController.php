@@ -12,5 +12,8 @@ class PublicController extends Controller
         return view('welcome', compact('songs'));
     }
 
-    
+    public function user() {
+        $songs = Song::all();
+        return view('utente', compact('songs'));
+    }
 }

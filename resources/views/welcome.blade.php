@@ -15,7 +15,9 @@
                                 <img src="{{Storage::url($song->img)}}" class="card-img-top" alt="...">
                             @endif
                         <div class="card-body">
-                            <h5 class="card-title">{{$song->title}}</h5>
+                      
+                            <h4 class="card-title">Titolo: {{$song->title}}</h4>
+                            <h5 class="card-title">Canzone aggiunta da: {{$song->username}}</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="{{route('detailSong', compact('song'))}}" class="btn btn-primary">Maggiori Informazioni</a>
                         </div>

@@ -25,3 +25,5 @@ Route::get('/song/{song}', [SongController::class, 'detailSong'])->name('detailS
 Route::get('/song/update/{song}', [SongController::class, 'editSong'])->name('editSong');
 Route::put('/song/update/{song}', [SongController::class, 'updateSong'])->name('updateSong');
 Route::delete('song/delete/{song}', [SongController::class, 'destroySong'])->name('destroySong');
+
+Route::get('user', [PublicController::class, 'user'])->name('user');

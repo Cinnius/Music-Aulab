@@ -22,7 +22,7 @@
           <a class="nav-link" href="{{route('form')}}">Inserisci la tua canzone</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Utente: {{Auth::user()->name}}</a>
+          <a class="nav-link" href="{{route('user')}}">Utente: {{Auth::user()->name}}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('logout')}}" onclick="event.preventDefault() ; document.querySelector('#form-logout').submit();">Logout</a>
