@@ -9,25 +9,27 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('form')}}">Inserisci la tua canzone</a>
-        </li>
-
         @guest
         <li class="nav-item">
           <a class="nav-link" href="{{route('register')}}">Registrati</a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" href="{{route('login')}}">Accedi</a>
         </li>
 
         @else
-
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('form')}}">Inserisci la tua canzone</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="">Utente: {{Auth::user()->name}}</a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('logout')}}" onclick="event.preventDefault() ; document.querySelector('#form-logout').submit();">Logout</a>
+          <form id="form-logout" action="{{ route('logout')}}" method="POST" class="d-none">
+            @csrf
+          </form>
+        </li>
         @endguest
       </ul>
     </div>
