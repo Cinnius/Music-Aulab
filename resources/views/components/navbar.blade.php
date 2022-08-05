@@ -12,10 +12,23 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('form')}}">Inserisci la tua canzone</a>
         </li>
+
+        @guest
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="{{route('register')}}">Registrati</a>
         </li>
-        
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('login')}}">Accedi</a>
+        </li>
+
+        @else
+
+        <li class="nav-item">
+          <a class="nav-link" href="">Utente: {{Auth::user()->name}}</a>
+        </li>
+
+        @endguest
       </ul>
     </div>
   </div>
