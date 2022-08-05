@@ -12,6 +12,14 @@
             <div class="card-body">
                 <h5 class="card-title">{{$song->title}}</h5>
                 <p class="card-text">Il cantante di questa canzone è: {{$song->singer}}, è stata scritta nel: {{$song->year}} e dura {{$song->minutes}} secondi.</p>
+                <div class="d-flex justify-content-center">
+                    <a class="btn btn-warning mx-2" href="{{route('editSong', compact('song')) }}">Modifica</a>
+                    <form method="POST" action="{{route('destroySong', compact('song')) }}">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-danger">Cancella</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

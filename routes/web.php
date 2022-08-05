@@ -20,3 +20,8 @@ Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/song', [SongController::class, 'form'])->name('form');
 Route::post('/song/submit', [SongController::class, 'postSong'])->name('postSong');
 Route::get('/song/{song}', [SongController::class, 'detailSong'])->name('detailSong');
+
+// Update & Delete song
+Route::get('/song/update/{song}', [SongController::class, 'editSong'])->name('editSong');
+Route::put('/song/update/{song}', [SongController::class, 'updateSong'])->name('updateSong');
+Route::delete('song/delete/{song}', [SongController::class, 'destroySong'])->name('destroySong');
