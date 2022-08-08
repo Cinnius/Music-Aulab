@@ -16,7 +16,7 @@
                 @guest
                 @else
 
-                    @if (Auth::user() == $song->user)
+                    @if (Auth::id() == $song->user_id)
                         <div class="d-flex justify-content-center">
                             <a class="btn btn-warning mx-2" href="{{route('editSong', compact('song')) }}">Modifica</a>
                             <form method="POST" action="{{route('destroySong', compact('song')) }}">

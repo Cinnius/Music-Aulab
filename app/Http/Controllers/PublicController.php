@@ -14,7 +14,7 @@ class PublicController extends Controller
     }
 
     public function user() {
-        $songs = Song::all();
+        $songs = Auth::user()->songs()->get();
         return view('utente', compact('songs'));
     }
 
