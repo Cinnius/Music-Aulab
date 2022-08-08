@@ -28,7 +28,6 @@ class SongRequest extends FormRequest
             'singer' => 'required',
             'year' => 'required|max:4',
             'minutes' => 'required',
-            'username' => 'required',
             'img' => 'nullable|image',
         ];
     }

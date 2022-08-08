@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SongRequest;
 use Illuminate\Http\Request;
 use App\Models\Song;
+use Illuminate\Support\Facades\Auth;
 
 class SongController extends Controller
 {
@@ -18,15 +19,14 @@ class SongController extends Controller
 
     public function postSong(SongRequest $req) {
         // dd($req->all());
-        $song = Song::create([
-            
+        $song = Auth::user()->songs()->create(
+            [
             "title"=>$req->input('title'),
             "singer"=>$req->input('singer'),
             "year"=>$req->input('year'),
             "minutes"=>$req->input('minutes'),
-            "username"=>$req->input('username'),
-          
-        ]);
+            ]
+        );
 
         if($req->file('img')){
             $song->img = $req->file('img')->store('public/img');

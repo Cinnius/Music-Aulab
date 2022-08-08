@@ -17,7 +17,7 @@
                         <div class="card-body">
                       
                             <h4 class="card-title">Titolo: {{$song->title}}</h4>
-                            <h5 class="card-title">Canzone aggiunta da: {{$song->username}}</h5>
+                            <h5 class="card-title">Canzone aggiunta da: {{$song->user->name}}</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="{{route('detailSong', compact('song'))}}" class="btn btn-primary">Maggiori Informazioni</a>
                         </div>

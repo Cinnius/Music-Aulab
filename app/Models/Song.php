@@ -10,11 +10,15 @@ class Song extends Model
     use HasFactory;
 
     protected $fillable = [
-        "title",
-        "singer",
-        "year",
-        "minutes",
-        "username",
-        "img",
+        'user_id',
+        'title',
+        'singer',
+        'year',
+        'minutes',
+        'img',
     ];
+
+    public function user () {
+        return $this->belongsTo(User::class);
+    }
 }
