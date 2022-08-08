@@ -1,8 +1,46 @@
 <x-layout>
 
     <div class="container">
+        <h1>Utente: {{Auth::user()->name}}</h1>
+
         <div class="row">
-            <h1>Utente: {{Auth::user()->name}}</h1>
+            <h2>Aggiorna il tuo profilo</h2>
+
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
+
+            <form method="POST" action="{{route('postProfile')}}">
+                @csrf
+                <div class="mb-3">
+                    <label class="form-label">Telefono</label>
+                    <input type="text" class="form-control" name="phone">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Indirizzo</label>
+                    <input type="text" class="form-control" name="address">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Cap</label>
+                    <input type="text" class="form-control" name="cap">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Età</label>
+                    <input type="text" class="form-control" name="age">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Data di nascita</label>
+                    <input type="date" class="form-control" name="birthday">
+                </div>
+                <button type="submit" class="btn btn-primary">Aggiorna</button>
+            </form>
+
+        </div>
+
+        <div class="row">
+          
 
             @foreach ($songs as $song)
                 @if (Auth::user() == $song->user)
@@ -26,6 +64,9 @@
                 @endif
             @endforeach
         </div>
+
     </div>
+
+
 
 </x-layout>

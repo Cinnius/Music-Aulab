@@ -16,7 +16,7 @@
                 @guest
                 @else
 
-                    {{-- @if (Auth::user()->name == $song->username) --}}
+                    @if (Auth::user() == $song->user)
                         <div class="d-flex justify-content-center">
                             <a class="btn btn-warning mx-2" href="{{route('editSong', compact('song')) }}">Modifica</a>
                             <form method="POST" action="{{route('destroySong', compact('song')) }}">
@@ -25,7 +25,7 @@
                                 <button type="submit" class="btn btn-danger">Cancella</button>
                             </form>
                         </div>
-                    {{-- @endif --}}
+                    @endif
         
                     
                 @endguest

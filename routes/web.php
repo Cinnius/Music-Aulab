@@ -26,4 +26,7 @@ Route::get('/song/update/{song}', [SongController::class, 'editSong'])->name('ed
 Route::put('/song/update/{song}', [SongController::class, 'updateSong'])->name('updateSong');
 Route::delete('song/delete/{song}', [SongController::class, 'destroySong'])->name('destroySong');
 
+
+// Rotta per il profilo
 Route::get('user', [PublicController::class, 'user'])->name('user');
+Route::post('/user/submit', [PublicController::class, 'postProfile'])->name('postProfile');

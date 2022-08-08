@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function songs () {
         return $this->hasMany(Song::class);
     }
+
+    public function profile () {
+        return $this->hasOne(Profile::class);
+    }
 }
