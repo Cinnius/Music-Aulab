@@ -39,6 +39,16 @@
                 <input type="text" class="form-control" name="minutes" value="{{old("minutes")}}">
             </div>
             <div class="mb-3">
+
+                <select name="compilations[]" multiple>
+                    @foreach ($compilations as $compilation)
+                        <option value="{{$compilation->id}}">
+                            {{$compilation->title}}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Scegli una copertina</label>
                 <input type="file" class="form-control" name="img">
             </div>

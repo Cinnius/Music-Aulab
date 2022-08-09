@@ -12,6 +12,14 @@
             <div class="card-body">
                 <h5 class="card-title">{{$song->title}}</h5>
                 <p class="card-text">Il cantante di questa canzone è: {{$song->singer}}, è stata scritta nel: {{$song->year}} e dura {{$song->minutes}} secondi.</p>
+                
+                @if(count($song->compilations)>=1)
+                    <ul class="card-text mb-3">Canzone contenuta in:
+                        @foreach($song->compilations as $compilation)
+                            <li>{{$compilation->title}}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
                 @guest
                 @else

@@ -21,4 +21,8 @@ class Song extends Model
     public function user () {
         return $this->belongsTo(User::class);
     }
+
+    public function compilations () {
+        return $this->belongsToMany(Compilation::class);
+    }
 }

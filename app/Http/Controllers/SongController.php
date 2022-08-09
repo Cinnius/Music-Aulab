@@ -6,6 +6,7 @@ use App\Http\Requests\SongRequest;
 use Illuminate\Http\Request;
 use App\Models\Song;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Compilation;
 
 class SongController extends Controller
 {
@@ -14,11 +15,13 @@ class SongController extends Controller
     }
     
     public function form() {
-        return view('form');
+        $compilations = Compilation::all();
+        return view('form', compact('compilations'));
     }
 
     public function postSong(SongRequest $req) {
         // dd($req->all());
+
         $song = Auth::user()->songs()->create(
             [
             "title"=>$req->input('title'),
@@ -32,6 +35,13 @@ class SongController extends Controller
             $song->img = $req->file('img')->store('public/img');
             $song->save();
         }
+
+        foreach($req->compilations as $compilation){
+            if($compilation){
+                $song->compilations()->attach($compilation);
+            }
+        }
+
 
         return redirect(route('form'))->with('message', "Canzone aggiunta con successo, vuoi aggiungerne un'altra?");
     }
@@ -57,7 +67,11 @@ class SongController extends Controller
     }
 
     public function destroySong(Song $song) {
+        $song->compilations()->detach();
+        $song->user()->disassociate();
+
         $song->delete();
+
         return redirect(route('homepage'));
     }
 }
