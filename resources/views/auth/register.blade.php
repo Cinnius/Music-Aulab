@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="container">
-        <h1>Register</h1>
+    <div class="container my-5">
+        <h1 class="pt-5">Registrati</h1>
         
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -33,5 +33,14 @@
         
             <button type="submit" class="btn btn-primary">Registrati</button>
         </form>
+        <div class="my-5">
+            <h3>Termini di registrazione:</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur reiciendis sit, itaque ab quo nam iusto dicta mollitia voluptas beatae odit nobis iste porro molestiae consequatur placeat rem temporibus quia!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim dolorem ab impedit quos quod quaerat. At laborum ullam dolore vero. Nisi odio pariatur aspernatur eveniet? Sunt id nesciunt dolore mollitia.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores nostrum veniam consequatur consectetur optio laudantium nobis sint expedita odit. Magni quisquam excepturi doloremque delectus velit voluptate. Eum incidunt odio libero.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, neque laborum qui quam ipsam fuga porro recusandae voluptatem odit officia, sint quis nesciunt dicta consequatur aliquam possimus similique vel provident?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusamus at necessitatibus, ab sapiente ipsam quidem laudantium quos suscipit dolorum sint perspiciatis quis aliquid quod animi nulla esse perferendis sunt!
+            </p>
+        </div>
     </div>
 </x-layout>

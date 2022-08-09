@@ -2,8 +2,8 @@
     <x-slot name="title">
         Inserisci la tua canzone
     </x-slot>
-    <div class="container">
-        <h1>Inserisci la tua canzone!</h1>
+    <div class="container my-5">
+        <h1 class="pt-5">Inserisci la tua canzone!</h1>
 
         @if (session('message'))
             <div class="alert alert-success">

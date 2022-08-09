@@ -2,7 +2,7 @@
     <x-slot name="title">
         Modifica la tua canzone
     </x-slot>
-    <div class="container">
+    <div class="container my-5 pt-5">
         <h1>Modifica la tua canzone!</h1>
 
         @if ($errors->any())

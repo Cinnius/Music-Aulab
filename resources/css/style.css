@@ -1,0 +1,9 @@
+.header-bg{
+    background: url(/storage/app/public/img/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card{
+    width: 18rem;
+}
